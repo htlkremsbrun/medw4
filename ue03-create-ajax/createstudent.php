@@ -1,7 +1,7 @@
 <?php
 
-$user = "";
-$pwd = "";
+$user="";
+$pwd="";
 
 try {
     $conn = new PDO('mysql:host=localhost;dbname=supercode', $user, $pwd);
