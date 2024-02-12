@@ -19,3 +19,6 @@ url: 'http://127.0.0.1/.../tabledata.php'
 
 Anpassung wie unter **ue03-read-ajax** vornehmen. Das Skript ermöglicht ausschließlich das Erstellen eines Eintrages. Die
 Ausgaeb der Tabelle ist nicht implementiert.
+
+## ue03-update-ajax
+Anpassung wie unter **ue03-read-ajax** vornehmen. Das Erstellen eines Eintrages ist nicht implementiert. 
