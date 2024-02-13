@@ -1,5 +1,13 @@
 # medw4
 
+## ue03-server-side-crud
+In der `db.php` Username und Passwort setzen:
+
+````php
+$user = "";
+$pwd = "";
+````
+
 ## ue04-read-ajax
 
 In der `tabledata.php` Username und Passwort setzen:
