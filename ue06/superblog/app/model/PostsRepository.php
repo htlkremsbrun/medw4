@@ -14,15 +14,20 @@ class PostsRepository
     }
 
     /**
-     * @return array
+     * Fetches all posts from the database and returns them as an array of PostModel instances.
+     * @return PostModel[] Array containing all posts, empty if no posts are found
      */
     public function fetchPosts(): array
     {
-        $posts = $this->pdo->query("SELECT * FROM posts")->fetchAll();
-        $items = [];
-        foreach ($posts as $post) {
-            array_push($items, new PostModel($post["id"], $post["title"], $post["content"]));
+        $stmt = $this->pdo->prepare("SELECT id, title, content FROM posts ORDER BY id ASC");
+        $stmt->execute();
+
+        $posts = [];
+
+        foreach ($stmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
+            $posts[] = new PostModel((int)$row['id'], $row['title'], $row['content']);
         }
-        return $items;
+
+        return $posts;
     }
 }
